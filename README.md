@@ -46,9 +46,9 @@ sudo systemctl restart sshd
 ```
 ### Hadoop 3.3.1
 ```sh
-wget https://dlcdn.apache.org/hadoop/common/stable/hadoop-3.3.1.tar.gz
-tar -zxf hadoop-3.3.1.tar.gz
-rm hadoop-3.3.1.tar.gz
+wget -O ~/hadoop-3.3.1.tar.gz https://dlcdn.apache.org/hadoop/common/stable/hadoop-3.3.1.tar.gz
+tar -zxf ~/hadoop-3.3.1.tar.gz
+rm ~/hadoop-3.3.1.tar.gz
 ```
 ### .bashrc
 ```sh
@@ -271,9 +271,9 @@ rm -r dfs/node/*
 ```
 # HBase
 ```
-wget https://dlcdn.apache.org/hbase/stable/hbase-2.4.9-bin.tar.gz
-tar -zxf hbase-2.4.9-bin.tar.gz
-rm hbase-2.4.9-bin.tar.gz
+wget -O ~/hbase-2.3.7-bin.tar.gz https://dlcdn.apache.org/hbase/2.3.7/hbase-2.3.7-bin.tar.gz
+tar -zxf ~/hbase-2.3.7-bin.tar.gz
+rm ~/hbase-2.3.7-bin.tar.gz
 ```
 ### .bashrc
 ```bash
@@ -281,7 +281,7 @@ nano ~/.bashrc
 ```
 ```bash
 # HBase
-export HBASE_HOME=/home/big/hbase-2.4.9
+export HBASE_HOME=/home/big/hbase-2.3.7
 export PATH=$PATH:$HBASE_HOME/bin
 ```
 ```
@@ -314,7 +314,7 @@ nano $HBASE_HOME/conf/hbase-site.xml
   </property>
   <property>
     <name>hbase.zookeeper.property.dataDir</name>
-    <value>hdfs://node-0:9000/zookeeper</value>
+    <value>/home/big/zookeeper</value>
   </property>
   <property>
     <name>hbase.zookeeper.property.clientPort</name>
